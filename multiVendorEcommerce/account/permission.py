@@ -19,5 +19,5 @@ class IsBuyer(BasePermission):
     """
 
     def has_permission(self, request, view):
-        # Check if the user is authenticated and has the 'seller' role.
+        # Check if the user is authenticated and has the 'Buyer' role.
         return request.user.is_authenticated and request.user.is_buyer == 'True'
