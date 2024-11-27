@@ -10,7 +10,7 @@ class IsSeller(BasePermission):
 
     def has_permission(self, request, view):
         # Check if the user is authenticated and has the 'seller' role.
-        return request.user.is_authenticated and request.user.is_seller == 'True'
+        return request.user.is_authenticated and request.user.is_seller == True
     
 
 class IsBuyer(BasePermission):
@@ -20,4 +20,4 @@ class IsBuyer(BasePermission):
 
     def has_permission(self, request, view):
         # Check if the user is authenticated and has the 'Buyer' role.
-        return request.user.is_authenticated and request.user.is_buyer == 'True'
+        return request.user.is_authenticated and request.user.is_buyer == True
