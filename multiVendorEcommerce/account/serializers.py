@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from rest_framework.response import Response
 from .models import CustomUser
 class SellerRegistrationSerializer(serializers.ModelSerializer):
+    first_name = serializers.CharField(required=True)
+    last_name = serializers.CharField(required=True)
     password2 = serializers.CharField(write_only=True)
     class Meta:
        model = CustomUser
@@ -16,8 +18,8 @@ class SellerRegistrationSerializer(serializers.ModelSerializer):
           user = CustomUser.objects.create_user(
             email= validated_data['email'],
             password= validated_data['password'],
-            first_name = validated_data['first_name'],
-            last_name = validated_data['last_name'],
+            # first_name = validated_data['first_name'],
+            # last_name = validated_data['last_name'],
             is_seller = True,
             is_staff = True,
             is_active = True
@@ -35,6 +37,8 @@ class SellerRegistrationSerializer(serializers.ModelSerializer):
   
 
 class BuyerRegistrationSerializer(serializers.ModelSerializer):
+    first_name = serializers.CharField(required=True)
+    last_name = serializers.CharField(required=True)
     password2 = serializers.CharField(write_only=True)
     class Meta:
        model = CustomUser

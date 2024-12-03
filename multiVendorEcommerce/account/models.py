@@ -9,7 +9,7 @@ class CustomUser(AbstractUser):
     is_seller = models.BooleanField(default=False)
     is_buyer = models.BooleanField(default=False)
     USERNAME_FIELD = "email"
-    REQUIRED_FIELDS =[]
+    REQUIRED_FIELDS =["first_name","last_name"]
     objects = MyUserManager()
 
     def __str__(self):
