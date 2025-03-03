@@ -39,12 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'drf_yasg',
     'phonenumber_field',
     'account',
     'category',
     'vendor',
     'product',
     'cart',
+
 ]
 
 
